@@ -1,0 +1,16 @@
+.certificates__container{
+
+}
+.certificates__gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.certificates__gallery>a{
+    display: block;
+}
+.certificates__galleryItem{
+    width: 100%;
+}
+.certificates__galleryItem>img{
+    width: 100%;
+}

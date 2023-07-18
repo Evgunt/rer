@@ -1,0 +1,9 @@
+.banner__container{
+    background-image: url('../assets/images/aron-yigin-dFnEgqVYMTw-unsplash 1.png');
+    background-size: 100%;
+    color: white;
+}
+.banner__content{
+    display: flex;
+    flex-direction: row;
+}

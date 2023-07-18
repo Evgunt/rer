@@ -1,0 +1,19 @@
+.navbar__container{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--grey);
+    color: white;
+    padding: 0 5% 0 5%;
+    height: 105px;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar__items{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+.navbar__phone{
+    display: flex;
+    flex-direction: row;
+}
