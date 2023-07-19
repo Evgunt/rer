@@ -22,3 +22,16 @@
     display: flex;
     flex-direction: row;
 }
+.about__sliderArrows{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+@media screen and (max-width: 900px) {
+    .about__text{
+        width: 100%;
+    }
+    .about__imageContainer{
+        display: none;
+    }
+}

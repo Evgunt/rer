@@ -14,3 +14,16 @@
 .certificates__galleryItem>img{
     width: 100%;
 }
+@media screen and (max-width: 900px) {
+    .certificates__gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 700px) {
+    .certificates__gallery{
+        grid-template-columns: 1fr;
+    }
+    .certificates__galleryItem{
+        display: none;
+    }
+}

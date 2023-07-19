@@ -1,3 +1,8 @@
+.sizeRange__container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
 .sizeRange__table{
     border: var(--tableBorder);
 }
