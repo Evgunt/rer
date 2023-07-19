@@ -1,36 +1,66 @@
-.catalogue__container{
+.catalogue__container {
 }
-.catalogue__grid{
+
+.catalogue__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.catalogue__article{
+
+.catalogue__article {
     padding: 24px;
     border: var(--tableBorder)
 }
-.catalogue__dimensionsGrid{
+
+/*.catalogue__dimensionsGrid{*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 1fr 1fr;*/
+/*}*/
+.catalogue__table {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
-.catalogue__articleCover{
-    max-width:100%
+
+.catalogue__tableRowItem {
+    text-align: center;
 }
-.catalogue__grid{
+
+.catalogue__tableRowMarker {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*aspect-ratio: 1/1;*/
+    background-image: url("../assets/icons/tableMarker.svg");
+    background-repeat: no-repeat;
+    /*background-size: 100%;*/
+    background-position: center;
+}
+
+.catalogue__articleCover {
+    max-width: 100%
+}
+
+.catalogue__grid {
     margin-bottom: 40px;
 }
-.catalogue__articleTitle{
+
+.catalogue__articleTitle {
     margin-bottom: 24px;
 }
 
+.catalogue__article > .bold {
+    margin-bottom: 8px;
+}
+
 @media screen and (max-width: 1500px) {
-    .catalogue__grid{
+    .catalogue__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (max-width: 900px) {
-    .catalogue__grid{
+    .catalogue__grid {
         grid-template-columns: 1fr;
     }
 }

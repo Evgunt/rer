@@ -21,6 +21,7 @@
     <!--  carousel-->
     <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/scroll.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <!--    gallery-->
     <!--    <script src="js/fancybox.min.js"></script>-->
@@ -41,18 +42,17 @@
         <div class="navbar__container">
             <div class="navbar__logo">THEHALO</div>
             <div class="navbar__items">
-                <div class="navbar__item">Преимущества</div>
-                <div class="navbar__item">Каталог</div>
-                <div class="navbar__item">Размерный ряд</div>
-                <div class="navbar__item">Наше производство</div>
-                <div class="navbar__item">О нас</div>
-                <div class="navbar__item">Контакты</div>
+                <div class="navbar__item" onclick="anchor('advantages')">Преимущества</div>
+                <div class="navbar__item" onclick="anchor('catalogue')">Каталог</div>
+                <div class="navbar__item" onclick="anchor('sizeRange')">Размерный ряд</div>
+                <div class="navbar__item" onclick="anchor('product')">Наше производство</div>
+                <div class="navbar__item" onclick="anchor('about')">О нас</div>
+                <div class="navbar__item" onclick="anchor('contact')">Контакты</div>
             </div>
             <div class="navbar__call">
                 <div class="navbar__phone"><img alt="phoneIcon" class="phoneIcon" src="assets/icons/call.svg">
-                    +7(923)414-90-35
-                </div>
-                <div class="button button__small">Заказать звонок</div>
+                    <a  href="tel:+7 (923) 414-90-35">+7(923)414-90-35</a>                </div>
+                <div class="button button__small" onclick="openEnrollForm()">Заказать звонок</div>
             </div>
         </div>
         <div class="banner__content">
@@ -66,7 +66,7 @@
                     <form class="banner__enrollForm">
                         <input class="banner__enrollInput" placeholder="Введите номер телефона">
                         <div class="banner__buttonContainer">
-                            <div class="button button__small">Заказать со скидкой</div>
+                            <div class="button button__small" onclick="openEnrollForm()">Заказать со скидкой</div>
                         </div>
                     </form>
                 </div>
@@ -75,14 +75,25 @@
                 <img class="banner__image" alt="bannerImage" src="assets/images/banner/Ellipse%201.png">
             </div>
             <div class="banner__arrowButtonContainer">
-                <div class="banner__arrowButton arrow circle"></div>
+                <div class="banner__arrowButton arrow circle" onclick="anchor('advantages')"></div>
             </div>
         </div>
-
     </article>
 </header>
+<div class="enrollWindow__container" id="enrollWindow" onclick="closeModalWindow('enrollWindow')">
+    <form class="enrollWindow__form" onclick="event.preventDefault()">
+        <div class="enrollWindow__closeContainer">
+            <div onclick="closeModalWindow('enrollWindow')" class="enrollWindow__close">✕</div>
+        </div>
+        <div class="enrollWindow__title">Создать запись</div>
+        <input type="text" name="phone" placeholder="Телефон">
+        <input type="text" name="email" placeholder="Почта">
+        <textarea placeholder="Комментарий"></textarea>
+        <div class="button button__small">Записаться</div>
+    </form>
+</div>
 <main>
-    <article class="advantages__container">
+    <article class="advantages__container" id="advantages">
         <div class="title">Почему уже более 1000 семей выбрали полистиролбетон для дома своей мечты?</div>
         <div class="advantages__list">
             <div class="advantages__item">
@@ -111,7 +122,7 @@
             </div>
         </div>
     </article>
-    <article class="requirements__container">
+    <article class="requirements__container" id="requirements">
         <div>
             <div class="title">Полистиролбетон отвечает всем 7 требованиям, которые мы сформировали за 15 лет
                 строительства домов
@@ -220,23 +231,33 @@
         </div>
     </article>
     <div class="title">Каталог</div>
-    <article class="catalogue__container">
+    <article class="catalogue__container" id="catalogue">
         <div class="catalogue__grid">
             <div class="catalogue__article">
                 <div class="catalogue__articleTitle bold">Блок полистиролбетонный марки</div>
                 <div class="bold">Габариты</div>
-                <div class="catalogue__dimensionsGrid">
-                    <div class="catalogue__dimensionsItem">600x300x200</div>
-                    <div class="catalogue__dimensionsItem">600x300x400</div>
-                    <div class="catalogue__dimensionsItem">600x150x300</div>
-
-                    <div class="catalogue__dimensionsItem">600x200x400</div>
-                    <div class="catalogue__dimensionsItem">600x300x300</div>
-                    <div class="catalogue__dimensionsItem">600x200x200</div>
-
-                    <div class="catalogue__dimensionsItem">600x150x200</div>
-                    <div class="catalogue__dimensionsItem">600x100x300</div>
-                    <div class="catalogue__dimensionsItem">2400x600x600</div>
+                <div class="catalogue__table">
+                    <div class="catalogue__tableRow">
+                        <div class="catalogue__tableRowItem">600x300x200</div>
+                        <div class="catalogue__tableRowMarker"></div>
+                        <div class="catalogue__tableRowItem">600x300x400</div>
+                        <div class="catalogue__tableRowMarker"></div>
+                        <div class="catalogue__tableRowItem">600x150x300</div>
+                    </div>
+                    <div class="catalogue__tableRow">
+                        <div class="catalogue__tableRowItem">600x200x400</div>
+                        <div class="catalogue__tableRowMarker"></div>
+                        <div class="catalogue__tableRowItem">600x300x300</div>
+                        <div class="catalogue__tableRowMarker"></div>
+                        <div class="catalogue__tableRowItem">600x200x200</div>
+                    </div>
+                    <div class="catalogue__tableRow">
+                        <div class="catalogue__tableRowItem">600x150x200</div>
+                        <div class="catalogue__tableRowMarker"></div>
+                        <div class="catalogue__tableRowItem">600x100x300</div>
+                        <div class="catalogue__tableRowMarker"></div>
+                        <div class="catalogue__tableRowItem">2400x600x600</div>
+                    </div>
                 </div>
                 <div><img class="catalogue__articleCover" src="assets/images/catalogue/%5Bremoval%202.png" alt="">
                 </div>
@@ -276,12 +297,12 @@
                 </div>
             </div>
         </div>
-        <div class="button">
+        <div class="button" onclick="openEnrollForm()">
             Получить прайс
         </div>
     </article>
     <div class="title">Размерный ряд</div>
-    <article class="sizeRange__container">
+    <article class="sizeRange__container" id="sizeRange">
         <div class="sizeRange__table">
             <div class="sizeRange__tableHeader sizeRange__tableRow">
                 <div class="sizeRange__tableItem">Длина</div>
@@ -298,12 +319,11 @@
                 </div>
             </div>
         </div>
-        <div class="button">
+        <div class="button" onclick="openEnrollForm()">
             Получить консультацию
         </div>
     </article>
-
-    <article class="product">
+    <article class="product" id="product">
         <div class="title">Наше производство</div>
         <div class="owl-carousel owl-theme product_slider">
             <img class="product_slider__item" src="assets/images/production/image10.png">
@@ -313,7 +333,7 @@
         </div>
     </article>
     <div class="title">О нас</div>
-    <article class="about__container">
+    <article class="about__container" id="about">
         <div class="about__slider">
             <div class="about__text">
                 <div class="about__title">Первый блочный комбинат</div>
@@ -323,7 +343,7 @@
                     по проектированию, строительству, сопровождению и авторскому надзору.Многолетний опыт позволяет
                     нам находить оптимальные решения для проектирования и строительства частных и промышленных
                     сооружений, в том числе по индивидуальным параметрам. На каждом этапе реализации проекта мы
-                    четко соблюдаем стандарты качества, принятые в нашей компании.
+                    четко соблюдаем стандарты качества, принятые в нашей компании.<br><br>
                     Наша команда высококвалифицированных специалистов знает все тонкости каждого этапа: от
                     производства продукции до проектирования и строительства. Сертифицированные специалисты
                     обеспечивают контроль всех процессов, поэтому мы с уверенностью можем гарантировать вам
@@ -339,7 +359,7 @@
         </div>
     </article>
     <div class="title">Качество и сертификаты</div>
-    <article class="certificates__container">
+    <article class="certificates__container" id="certificates">
         <div class="certificates__gallery">
             <a href="assets/images/sertificates/image%2023.png" data-fancybox="gallery"
                class="certificates__galleryItem">
@@ -376,13 +396,14 @@
         </div>
     </article>
     <div class="title">Контакты</div>
-    <article class="contact__container">
+    <article class="contact__container" id="contact">
         <div class="contact__text">
             <div>
                 <div class="contact__title">КОНТАКТЫ</div>
-                <div class="contact__phone"><img alt="phoneIcon" src="assets/icons/call.svg">+7 (923) 414-90-35
+                <div class="contact__phone"><img class="contact__icon" alt="phoneIcon" src="assets/icons/call.svg">
+                    <a  href="tel:+7 (923) 414-90-35">+7(923)414-90-35</a>
                 </div>
-                <div class="contact__email"><img alt="emailIcon" src="assets/icons/mail.svg">Thehalomsk@gmail.com
+                <div class="contact__email"><img class="contact__icon" alt="emailIcon" src="assets/icons/mail.svg"><a>Thehalomsk@gmail.com</a>
                 </div>
             </div>
             <div>
@@ -400,18 +421,18 @@
     <div class="navbar__container">
         <div class="navbar__logo">THEHALO</div>
         <div class="navbar__items">
-            <div class="navbar__item">Преимущества</div>
-            <div class="navbar__item">Каталог</div>
-            <div class="navbar__item">Размерный ряд</div>
-            <div class="navbar__item">Наше производство</div>
-            <div class="navbar__item">О нас</div>
-            <div class="navbar__item">Контакты</div>
+            <div class="navbar__item" onclick="anchor('advantages')">Преимущества</div>
+            <div class="navbar__item" onclick="anchor('catalogue')">Каталог</div>
+            <div class="navbar__item" onclick="anchor('sizeRange')">Размерный ряд</div>
+            <div class="navbar__item" onclick="anchor('product')">Наше производство</div>
+            <div class="navbar__item" onclick="anchor('about')">О нас</div>
+            <div class="navbar__item" onclick="anchor('contact')">Контакты</div>
         </div>
         <div class="navbar__call">
-            <div class="navbar__phone"><img alt="phoneIcon" class="phoneIcon" src="assets/icons/call.svg">
-                +7(923)414-90-35
+            <div class="navbar__phone"><img alt="phoneIcon" class="phoneIcon" src="assets/icons/call.svg" >
+                <a  href="tel:+7 (923) 414-90-35">+7(923)414-90-35</a>
             </div>
-            <div class="button button__small">Заказать звонок</div>
+            <div class="button button__small" onclick="openEnrollForm()">Заказать звонок</div>
         </div>
     </div>
 </footer>

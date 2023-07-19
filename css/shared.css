@@ -12,11 +12,11 @@
 }
 .button{
     display: flex;
-    padding: 24px 40px;
+    padding: 14px 20px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 24px;
     border-radius: 8px;
     background: var(--green);
@@ -36,7 +36,7 @@
 }
 .circle{
     aspect-ratio: 1/1;
-    width: 45px;
+    width: 60px;
     border-radius: 100%;
     border:1px solid var(--lightGrey);
 }
@@ -48,7 +48,8 @@
 }
 .circleBlack:hover{
     background-color: var(--grey);
-    border: unset;
+    border:1px solid var(--grey);
+
 }
 .arrow{
     transition: background-color 0.5s;

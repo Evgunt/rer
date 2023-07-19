@@ -1,7 +1,6 @@
 .contact__container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
 }
 
 .contact__text {
@@ -38,9 +37,11 @@
     display: flex;
     align-items: center;
 }
-
+.contact__icon{
+    height: 30px;
+}
 .contact__location {
-    margin-bottom: 24px;
+    margin-bottom: 20%;
 }
 
 @media screen and (max-width: 900px) {
@@ -53,7 +54,13 @@
     }
     .contact__container {
         display: flex;
-        flex-direction: row;
-        height: 60vh;
+        flex-direction: column-reverse;
+        /*height: 60vh;*/
+    }
+    .contact__text{
+        width: unset;
+    }
+    .contact__map{
+        width: unset;
     }
 }
